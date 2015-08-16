@@ -4,7 +4,7 @@
 # ------------------- command line $EDITOR --------------------------------
 
 # Ctrl-x Ctrl-e is a default binding for editing the current command line with
-# $EDITOR in bash. It's very useful.
+# $EDITOR in bash. Reproduce it for zsh.
 autoload edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
@@ -12,8 +12,9 @@ bindkey '^x^e' edit-command-line
 
 # ------------------- common PATH extensions -------------------------
 
-# ~/bin is a common location for custom user scripts.
+# ~/bin is the common location for user scripts.
 # ~/.local/bin is where e.g. `pip install --user` will put things.
+# TODO: Is this appropriate for a universal config?
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 
@@ -25,6 +26,10 @@ stty stop undef
 
 
 # ------------------- safe paste mode -------------------------------
+
+# When pasting multiple lines into the terminal, create a single multi-line
+# command that you can edit, instead of executing everything all at once.
+# The following version is copied from oh-my-zsh.
 
 # Code from Mikael Magnusson: http://www.zsh.org/mla/users/2011/msg00367.html
 #
