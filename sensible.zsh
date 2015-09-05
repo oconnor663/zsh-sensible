@@ -1,3 +1,9 @@
+# ------------------- miscellaneous settings ------------------------
+
+setopt notify    # immediate job notifications
+setopt autopushd # cd works like pushd
+
+
 # ------------------- shared history --------------------------------
 
 HISTSIZE=${HISTSIZE:-10000}
