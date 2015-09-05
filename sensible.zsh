@@ -10,14 +10,6 @@ zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
 
-# ------------------- common PATH extensions -------------------------
-
-# ~/bin is the common location for user scripts.
-# ~/.local/bin is where e.g. `pip install --user` will put things.
-# TODO: Is this appropriate for a universal config?
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-
-
 # ------------------ disable terminal flow control ------------------
 
 # Many terminals use Ctrl-s and Ctrl-q for flow control by default. This
