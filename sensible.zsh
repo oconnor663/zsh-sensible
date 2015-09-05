@@ -1,4 +1,13 @@
 # ------------------- shared history --------------------------------
+
+HISTSIZE=${HISTSIZE:-10000}
+SAVEHIST=${SAVEHIST:-10000}
+HISTFILE=${HISTFILE:-$HOME/.zsh_history}
+setopt share_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
+
+
 # ------------------- extended globbing --------------------------------
 # ------------------- enable completion --------------------------------
 # ------------------- command line $EDITOR --------------------------------
