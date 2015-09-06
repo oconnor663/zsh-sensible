@@ -29,8 +29,8 @@ setopt autopushd # cd works like pushd
 
 # ------------------- shared history --------------------------------
 
-HISTSIZE=${HISTSIZE:-10000}
-SAVEHIST=${SAVEHIST:-10000}
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=${HISTFILE:-$HOME/.zsh_history}
 setopt share_history
 setopt hist_ignore_dups
