@@ -37,9 +37,13 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 
 
-# ------------------- enable completion --------------------------------
 
-# TODO
+# ------------------- enable menu completion ------------------------
+
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+# fix Shift-Tab in the completions menu
+bindkey '^[[Z' reverse-menu-complete
 
 
 # ------------------ disable terminal flow control ------------------
