@@ -1,4 +1,27 @@
-# ------------------- miscellaneous settings ------------------------
+# ------------------- key bindings --------------------------------
+
+# prev-word binding from oh-my-zsh
+# TODO: Is this appropriate for sensible? It's so good tho...
+bindkey "^[m" copy-prev-shell-word
+
+# Ctrl-x Ctrl-e is a default binding for editing the current command line with
+# $EDITOR in bash. Reproduce it for zsh.
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
+# fix the insert/delete/home/end keys
+typeset -A key
+key[Home]=${terminfo[khome]}
+key[End]=${terminfo[kend]}
+key[Insert]=${terminfo[kich1]}
+key[Delete]=${terminfo[kdch1]}
+[[ -n "${key[Home]}"   ]]  && bindkey "${key[Home]}"   beginning-of-line
+[[ -n "${key[End]}"    ]]  && bindkey "${key[End]}"    end-of-line
+[[ -n "${key[Insert]}" ]]  && bindkey "${key[Insert]}" overwrite-mode
+[[ -n "${key[Delete]}" ]]  && bindkey "${key[Delete]}" delete-char
+
+# ------------------- options ------------------------
 
 setopt notify    # immediate job notifications
 setopt autopushd # cd works like pushd
@@ -15,13 +38,8 @@ setopt hist_ignore_space
 
 
 # ------------------- enable completion --------------------------------
-# ------------------- command line $EDITOR --------------------------------
 
-# Ctrl-x Ctrl-e is a default binding for editing the current command line with
-# $EDITOR in bash. Reproduce it for zsh.
-autoload edit-command-line
-zle -N edit-command-line
-bindkey '^x^e' edit-command-line
+# TODO
 
 
 # ------------------ disable terminal flow control ------------------
